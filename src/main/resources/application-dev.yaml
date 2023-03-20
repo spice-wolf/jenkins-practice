@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: jenkins-pratice-dev
+
+server:
+  port: 8081

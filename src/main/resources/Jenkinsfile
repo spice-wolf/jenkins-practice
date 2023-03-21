@@ -25,6 +25,10 @@ pipeline {
                 }
             }
         }
+        stage('deploy') {
+            // 发布到 Jenkins 所在的服务器上
+            sh "mkdir -p /home/spice/jenkins-practice && mv target/jenkins-practice-0.0.1-SNAPSHOT.jar /home/spice/jenkins-practice/jenkins-practice.jar"
+        }
     }
 
     post {

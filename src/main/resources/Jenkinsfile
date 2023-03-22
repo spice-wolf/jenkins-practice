@@ -37,7 +37,8 @@ pipeline {
                                                 excludes: '',
                                                 execCommand: '''java -version 
                                                                 cd /home/spice/jenkins-practice 
-                                                                nohup java -jar jenkins-practice.jar &''',
+                                                                nohup java -jar jenkins-practice.jar > /home/spice/jenkins-practice/log.txt &
+                                                                 ''',
                                                 execTimeout: 120000,
                                                 flatten: false,
                                                 makeEmptyDirs: false,

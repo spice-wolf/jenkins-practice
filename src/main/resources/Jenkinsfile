@@ -28,7 +28,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 // 通过 ssh 将项目文件发送到执行的服务器上（Local WSL 是在 Jenkins 管理界面中配置的服务器信息）
-                sshPublisher(publishers: [sshPublisherDesc(configName: 'Local WSL', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'docker --version', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/jenkins-practice', remoteDirectorySDF: false, removePrefix: 'target', sourceFiles: 'target/jenkins-practice.jar')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
+                sshPublisher(publishers: [sshPublisherDesc(configName: 'Local WSL', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'docker --version', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/jenkins-practice', remoteDirectorySDF: false, removePrefix: 'target', sourceFiles: 'target/jenkins-practice.jar')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true)])
             }
         }
     }
